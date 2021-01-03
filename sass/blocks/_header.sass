@@ -1,0 +1,70 @@
+body
+    background-color: #F5F5F5
+.body-another
+    overflow: hidden
+.container
+    margin: auto
+    width: 1182px
+    color: white
+    height: 30px
+.header
+    width: 100%
+    padding: 10px 0px
+    background-color: black
+    position: fixed
+    top: 0
+    left: 0
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        position: relative
+    &__search
+        width: 330px
+        height: 30px
+        background: #FFFFFF
+        border: 1px solid #D9D9D9
+        box-sizing: border-box
+        border-radius: 4px
+        padding-left: 18px
+        padding-right: 30px
+        font-family: 'Roboto'
+        font-size: 12px
+        line-height: 14px
+        color: #BFBFBF
+        &-block
+            position: relative
+            width: 330px
+            height: 30px
+        &-icon
+            position: absolute
+            right: 8.5px
+            top: 9px
+            cursor: pointer
+    &__icon
+        width: 20px
+        height: 20px
+        margin-right: 12px
+    &__name
+        font-family: 'Roboto'
+        font-weight: 500
+        font-size: 14px
+        line-height: 16px
+        color: #FFFFFF
+        &-block
+            display: flex
+            align-items: center
+            text-decoration: none
+    &__mobile
+        &-menu
+            display: none
+            position: absolute
+            left: 0
+            top: 8.5px
+    &__line
+        width: 16px
+        height: 1px
+        background-color: white
+        margin-top: 5px
+        &:first-child
+            margin-top: 0
