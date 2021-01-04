@@ -3,4 +3,4 @@ $(".header__mobile-menu").click(function(){
     $("body").toggleClass("body-another");
     $(".parallax-mirror").toggleClass("parallax-another");
 });
-$('.background__image').parallax({imageSrc: '../img/back-one.jpg', speed: 0.0009, positionY: 'bottom'});
+$('.background__image').parallax({imageSrc: '../img/back-one.jpg', speed: 0.0009, positionY: 'bottom', iosFix: true, androidFix: true});
