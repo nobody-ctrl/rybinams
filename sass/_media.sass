@@ -1,32 +1,114 @@
 @media (max-width: 1440px)
+    .background
+        &__image
+            min-height: 600px
     .container
         margin: auto
         width: 1182px
         color: white
+    .background
+        &__image
+            min-height: 500px
 @media (max-width: 1250px)
     .container
         width: 980px
+    .background
+        &__image
+            min-height: 400px
+    .hero
+        &__greetings
+            &-avatar
+                width: 200px
+            &-span
+                font-size: 16px
+        &__post
+            &-content
+                font-size: 15px
+        &-right
+            margin-left: 40px
 @media (max-width: 1050px)
     .container
         width: 850px
+    .hero
+        &-right
+            margin-left: 0px
 @media (max-width: 950px)
     .container
         width: 750px
+    .header
+        &__mobile
+            &-menu
+                display: block
+                margin-left: -50px
+        &__search
+            &-block
+                margin-left: 0px
+    .hero
+        &-left
+            display: none
+        &-right
+            margin-left: 0
+            width: 100%
+@media (max-width: 900px)
+    .header
+        &__mobile
+            &-menu
+                margin-left: -30px
+        &__search
+            &-block
+                margin-left: 20px
+@media (max-width: 860px)
+    .header
+        &__mobile
+            &-menu
+                margin-left: -10px
+        &__search
+            &-block
+                margin-left: 40px
 @media (max-width: 820px)
     .container
         width: 90%
     .header
         &__search
             width: 200px
+            margin-left: 0
             &-block
                 width: 200px
                 margin-left: 50px
-        &__mobile
-            &-menu
-                display: block
+    .background
+        &__image
+            min-height: 350px
+@media (max-width: 600px)
+    .hero
+        &__greetings
+            &-avatar
+                width: 150px
 @media (max-width: 500px)
     .header
         &__search-block
             display: none
         &__container
             flex-direction: row-reverse
+    .background
+        &__image
+            min-height: 300px
+    .hero
+        &__greetings
+            &-second
+                flex-direction: column
+            &-avatar
+                height: 100px
+                width: 100px
+                object-fit: none
+                border-radius: 50%
+                object-position: center 55%
+            &-span
+                margin-top: 20px
+                font-size: 14px
+                margin-bottom: 17px
+@media (max-width: 450px)
+    .hero
+        &__greetings
+            &-avatar
+                height: 80px
+                width: 80px
