@@ -1,22 +1,25 @@
 .mobile-menu-hidden
     display: none
+.mobile-menu-visible
+    display: block
     background-color: black
     color: white
     position: absolute
     top: 50px
     left: 0
+    bottom: 0
+    right: 0
     width: 100%
     height: 100%
-    overflow-y: scroll
-.mobile-menu-visible
-    display: block
-    display: flex
-    flex-direction: column
-    align-items: center
+    overflow: auto
+    text-align: center
 .mobile-link
     color: white
     text-decoration: none
     font-family: 'Roboto'
     margin-bottom: 30px
+    display: block
     &:first-child
         margin-top: 100px
+    &:last-child
+        height: 80px
