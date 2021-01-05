@@ -1,0 +1,15 @@
+@media (max-width: 950px)
+    .about
+        &-image
+            &-one, &-second, &-third
+                width: 350px
+                height: 200px
+@media (max-width: 500px)
+    .about
+        &-image
+            &-one, &-third
+                display: none
+            &-second
+                width: 60%
+                object-fit: cover
+                margin: auto
