@@ -23,8 +23,10 @@
             </div>
             <!-- /.header__mobile-menu -->
             <div class="header__search-block">
-                <input type="search" class="header__search" placeholder="Search">
-                <img src="img/search-icon.svg" alt="Icon: Search Icon" class="header__search-icon">
+                <form action="results.php" method="get">
+                    <input type="search" class="header__search" name="text" placeholder="Search">
+                    <button type="submit"><img src="img/search-icon.svg" alt="Icon: Search Icon" class="header__search-icon"></button>
+                </form>
             </div>
             <!-- /.header__search-block -->
             <a href="index.php" class="header__name-block">

@@ -84,23 +84,9 @@
                     if ( mysqli_connect_errno() ) {
                         exit('Failed to connect to MySQL: ' . mysqli_connect_error());
                     }
-                    $type = $_GET["type"];
-                    $subject = $_GET["subject"];
-                    if($type == "lesson" && $subject == "history"){
-                        $select = 0;
-                    }else if($type == "lesson" && $subject == "social"){
-                        $select = 1;
-                    }else if($type == "exams" && $subject == "history"){
-                        $select = 2;
-                    }else if($type == "exams" && $subject == "social"){
-                        $select = 3;
-                    }else if($type == "olymp" && $subject == "history"){
-                        $select = 4;
-                    }else {
-                        $select = 5;
-                    }
+                    $text = $_GET["text"];
                     $res = mysqli_query($con, "SET NAMES 'utf8'");
-                    $result = mysqli_query($con, "SELECT * FROM files WHERE type = '$select' ORDER BY date DESC");
+                    $result = mysqli_query($con, "SELECT * FROM files WHERE name LIKE '%{$text}%' OR date LIKE '%{$text}%' ORDER BY date DESC");
 
                     if (mysqli_num_rows($result) > 0) {
                         // output data of each row
@@ -111,6 +97,7 @@
                         <span class="hero__post-date"><?php echo $row["date"]; ?></span>
                         <span class="hero__post-category">Категория: <span class="hero__post-cat">
                             <?php   
+                                $select = $row["type"];
                                 if($select == 0){
                                     echo "История, уроки";
                                     $link = "https://rybinams.ru/files/lessons-history/";
@@ -154,7 +141,11 @@
                 <?php
                         }
                     } else {
-                        echo "0 results";
+                        ?>
+                        <span class="hero__post-content">
+                            По вашему запросу ничего не найдено
+                        </span> <!-- /.footer__text -->
+                        <?php
                     }
                     mysqli_close($con);
                 ?>
