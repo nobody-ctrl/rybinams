@@ -1,0 +1,44 @@
+[06-Jan-2021 11:23:22 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:24:47 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:26:43 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:27:53 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:30:18 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:33:12 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:37:37 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:39:06 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:39:14 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:39:55 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26
+[06-Jan-2021 11:39:58 Europe/Moscow] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/p77750/public_html/rybinams.ru/admin/send.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/p77750/public_html/rybinams.ru/admin/send.php on line 26

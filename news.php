@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-for-small-back.css">
     <link rel="icon" href="https://anastasia-petrova.com/rybinams/favicon.ico" type="image/x-icon">
 </head>
@@ -67,62 +68,73 @@
             </div>
             <!-- /.hero-left -->
             <div class="hero-right">            
-                <div class="about-me">
-                    <h2>Рыбина Мария Сергеевна</h2>
-                    <div class="about-images">
-                        <img src="img/avatar-one.jpg" alt="Icon: Image First" class="about-image-one">
-                        <img src="img/avatar-two.jpg" alt="Icon: Image First" class="about-image-second">
-                        <img src="img/avatar-three.jpg" alt="Icon: Image First" class="about-image-third">
-                    </div>
-                    <!-- /.about-images -->
-                    <p>Учитель истории и обществознания МБОУ «Гимназия №5» г. Рязани с 2010 года. Квалификационная категория: высшая.</p>
-                    <h3>Образование</h3>
-                    <ul>
-                        <li>
-                            Рязанский государственный университет имени С.А. Есенина,
-                            2010 год: учитель истории и английского языка</li>
-                        <li>
-                            Рязанский государственный университет имени С.А. Есенина,
-                            2011 год: юрист по специальности «Юриспруденция»
-                        </li>
-                        <li>
-                            Рязанский государственный университет имени С.А. Есенина,
-                            2012 год: магистр социально-экономического образования
-                        </li>
-                    </ul>
-                    <h3>Награды</h3>
-                    <ul>
-                        <li>
-                            Почётная грамота управления образования и молодёжной
-                            политики администрации города Рязани (Приказ № 04 / 1-03-85
-                            от 29.09.2015)
-                        </li>
-                        <li>
-                            Благодарность министерства образования Рязанской области за
-                            подготовку победителей и призёров регионального этапа
-                            Всероссийской олимпиады школьников по истории,
-                            обществознанию, праву и экономике
-                        </li>
-                        <li>    
-                            Благодарность администрации города Рязани за подготовку
-                            победителей и призёров муниципального этапа Всероссийской
-                            олимпиады школьников по истории, обществознанию, праву и
-                            экономике
-                        </li>
-                        <li>
-                            Благодарность ГБУК «Музей истории молодёжного движения» и
-                            РОО «Союз патриотов Рязанской области» за достойное
-                            воспитание молодого поколения, формирования у него активной
-                            жизненной и гражданской позиции.
-                        </li>
-                    </ul>
-                    <h3>Контакты</h3>
 
-                    <p>
-                        Адрес электронной почты: Rybinamaria@gmail.com
-                    </p>
+                <?php
+                    session_start();
+                    // Change this to your connection info.
+                    setlocale(LC_CTYPE, 'ru_RU.utf8');
+                    $DATABASE_HOST = '127.0.0.1';
+                    $DATABASE_USER = 'p77750_dbuser';
+                    $DATABASE_PASS = '6?nwD216hf$AWn~%';
+                    $DATABASE_NAME = 'p77750_db';
+                    
+                    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+                    if ( mysqli_connect_errno() ) {
+                        exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+                    }
+                    $res = mysqli_query($con, "SET NAMES 'utf8'");
+                    $result = mysqli_query($con, "SELECT * FROM news ORDER BY date DESC");
+
+                    if (mysqli_num_rows($result) > 0) {
+                        // output data of each row
+                        while($row = mysqli_fetch_assoc($result)) { 
+                ?>
+                <div class="hero__post">
+                    <div class="hero__post-meta">
+                        <span class="hero__post-date"><?php echo $row["date"]; ?></span>
+                        <span class="hero__post-category">Категория: <span class="hero__post-cat">
+                            Новости
+                        </span></span>
+                    </div>
+                    <div class="hero__post-content news">
+                        <div class="news-left">
+                            <?php
+                            $pic = $row["picture"];
+                            if ($pic != "None"){
+                            ?>
+                                <img src="https://rybinams.ru/files/news<?php echo $pic; ?>" class="news-image">
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="news-right">
+                            <?php
+                                echo $row["text"];
+                                echo "<br><br>";
+                                $all_links = json_decode($row['path']);
+                                foreach ($all_links as $one_link){
+                                    $this_link = "https://rybinams.ru/files/news" . $one_link;
+                                ?>
+                                <a href="<?php echo $this_link; ?>" class="link-to-file">
+                                <?php echo basename($one_link); ?>
+                                </a>
+                                <br><br>
+                                <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                    <!-- /.hero__post-content -->
                 </div>
-                <!-- /.about-me -->
+                <!-- /.hero__post -->
+                <?php
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+                    mysqli_close($con);
+                ?>
+
                 <footer class="hero__footer footer">
                     <span class="footer__text">
                         @ Все материалы можно свободно использовать или копировать
