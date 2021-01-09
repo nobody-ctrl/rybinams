@@ -76,7 +76,7 @@
                     <!-- /.hero__greetings-first -->
                     <div class="hero__greetings-second">
                         <img src="img/avatar.png" alt="Icon: avatar" class="hero__greetings-avatar">
-                        <span class="hero__greetings-span">Приветствую Вас на сайте учителя истории и обществознания Гимназии №5 города Рязани Рыбины Марии Сергеевны. Надеюсь, что предложенные материалы будут Вам полезны.</span>
+                        <span class="hero__greetings-span">Приветствую Вас на сайте учителя истории и обществознания Гимназии №5 города Рязани Рыбиной Марии Сергеевны. Надеюсь, что предложенные материалы будут Вам полезны.</span>
                     </div>
                     <!-- /.hero__greetings-second -->
                 </div>

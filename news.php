@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -122,6 +125,11 @@
                                 </a>
                                 <br><br>
                                 <?php
+                                }
+                                if(isset($_SESSION['user'])){
+                                    ?>
+                                    <a href="delete.php?id=<?php echo $row['id'];?>&type=news">Удалить новость</a>
+                                    <?php
                                 }
                             ?>
                         </div>

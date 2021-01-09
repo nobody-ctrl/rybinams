@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -72,7 +75,6 @@
             <div class="hero-right">            
 
                 <?php
-                    session_start();
                     // Change this to your connection info.
                     setlocale(LC_CTYPE, 'ru_RU.utf8');
                     $DATABASE_HOST = '127.0.0.1';
@@ -137,14 +139,29 @@
                         Ссылка на файл/ы:
                         <?php
                             $all_links = json_decode($row['path']);
-                            foreach ($all_links as $one_link){
-                                $this_link = $link . $one_link;
-                            ?>
-                            <a href="<?php echo $this_link; ?>" class="link-to-file">
-                            <?php echo $row["name"] . ", " . basename($one_link); ?>
-                            </a>
-                            <br><br>
-                            <?php
+                            if(count($all_links) == 1){
+                                $this_link = $link . $all_links[0];
+                                ?>
+                                <a href="<?php echo $this_link; ?>" class="link-to-file">
+                                <?php echo $row["name"]; ?>
+                                </a>
+                                <br><br>
+                                <?php
+                            }else{
+                                foreach ($all_links as $one_link){
+                                    $this_link = $link . $one_link;
+                                ?>
+                                <a href="<?php echo $this_link; ?>" class="link-to-file">
+                                <?php echo $row["name"] . ", " . basename($one_link); ?>
+                                </a>
+                                <br><br>
+                                <?php
+                                }
+                            }
+                            if(isset($_SESSION['user'])){
+                                ?>
+                                <a href="delete.php?id=<?php echo $row['id'];?>&type=material">Удалить файл/ы</a>
+                                <?php
                             }
                         ?>
                     </div>
